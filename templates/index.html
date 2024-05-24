@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAIN TUMOR DETECTION</title>
+</head>
+<style>
+
+.tab-container {
+    display: flex;
+    justify-content: right;
+}
+.tab:last-child {
+    margin-right: 0;
+}
+p{
+    font-size: 4em;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: Oswald;
+}
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    margin-left:30px;
+}
+
+.subbtn:hover{
+    opacity:0.7;
+    transform: 1.5s;
+
+}
+input:focus {
+    outline: none;
+    border: none;
+}
+.tab{
+    text-decoration: none;
+    font-size: 30px;
+    font-family: Oswald;
+}
+h1{
+    margin-top: 200px;
+    font-family: Oswald;
+    font-size: 6em;
+    text-align: center;
+    color: white;
+}
+body{
+   background-color: rgb(16, 16, 40);
+   height: auto;
+}
+.card{
+    height: 400px;
+    width: 400px;
+    text-align: center;
+    border:2px solid black;
+    position: fixed;
+
+}
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0px 30px rgb(250, 250, 250);
+    border-radius: 5px;
+    border:2px solid rgb(68, 59, 59);
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+}
+.card-img-top{
+    width: 150px;
+    height: auto;
+    margin-top: 30px;
+    image-rendering: auto;
+}
+.card:hover{
+    box-shadow: 0 0 30px rgb(32, 145, 189),0 0 60px rgb(43, 143, 183),0 0 90px rgb(77, 153, 183);
+}
+h4{
+    font-size: 2em;
+    margin: 0;
+    color: white;
+
+}
+.name{
+    border:none;
+    width: 230px;
+    height: 30px;
+    border-radius: 2px;
+    margin-top:10px;
+    margin-left:100px;
+    font-size: 12px;
+
+}
+.subbtn{
+
+    margin-top:50px;
+    color:white;
+    background: rgb(32,29,97);
+    background: conic-gradient(circle, rgba(83,76,204,0.9360994397759104) 53%, rgba(28,28,142,1) 86%, rgba(0,212,255,1) 100%);
+    height:35px;
+    width:150px;
+    border:none;
+    border-radius:5px;
+    transition: 0.15s;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+#lab{
+    font-size: 2em;
+    color: rgb(67, 63, 63);
+    text-align: center;
+
+}
+input{
+    display: block;
+    font-size: 22px;
+}
+footer{
+    background-color: #a7a5a5;
+    color: #333;
+
+
+  }
+
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+
+  .grid div {
+    padding: 20px;
+  }
+
+
+  h2, h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 5px;
+  }
+
+  img {
+    margin-right: 5px;
+    width: 50px;
+    height: 30px;
+  }
+
+  .text-sm {
+    font-size: 0.8rem;
+  }
+
+
+ .max-w-screen-xl-mx-auto-px-4-py-10 a:hover{
+    color: rgb(0, 0, 0);
+}
+a:hover{
+    color: rgb(200, 194, 194);
+}
+.container2{
+    width: 100%;
+    height: 70px;
+}
+.box{
+    margin-top: 300px;
+    margin-bottom: 300PX;
+}
+label{
+    color: white;
+}
+.des1{
+    height: 200px;
+    width: 200px;
+    border-radius: 28% 72% 46% 54% / 40% 48% 52% 60%;
+}
+.des1{
+    display: inline-block;
+    position: fixed;
+    z-index: -1;
+    background: rgb(240,236,238);
+    background: linear-gradient(90deg, rgb(108, 224, 134) 0%, rgba(107,192,151,0.8795167725293243) 100%);
+    border-radius: 28% 72% 46% 54% / 40% 48% 52% 60%;
+    height: 300px;
+    width: 300px;
+    bottom: 60%;
+    right: 0%;
+}
+
+.des2{
+    border-radius: 82% 18% 59% 41% / 57% 48% 52% 43%;
+    background-color: white;
+    display: inline-block;
+    position: fixed;
+    z-index: -1;
+    background: rgb(240,236,238);
+    background: linear-gradient(90deg, rgb(216, 58, 137) 0%, rgba(180,59,88,0.8795167725293243) 100%);
+    border-radius: 28% 72% 46% 54% / 40% 48% 52% 60%;
+    height: 371px;
+    width: 371px;
+    bottom: 40%;
+    left: 0;
+}
+.des3{
+    border-radius: 82% 18% 59% 41% / 57% 48% 52% 43%;
+    background-color: white;
+    display: inline-block;
+    position: fixed;
+    z-index: -1;
+    background: rgb(192,207,87);
+    background: linear-gradient(90deg, rgba(192,207,87,1) 0%, rgba(174,183,40,0.8795167725293243) 100%);
+    border-radius: 28% 72% 46% 54% / 40% 48% 52% 60%;
+    height: 371px;
+    width: 371px;
+    top:50%;
+    left: 50%;
+}
+.des4{
+    border-radius: 82% 18% 59% 41% / 57% 48% 52% 43%;
+    background-color: white;
+    display: inline-block;
+    position: fixed;
+    z-index: -1;
+    background: rgb(192,207,87);
+    background: linear-gradient(90deg, rgba(192,207,87,1) 0%, rgba(174,183,40,0.8795167725293243) 100%);
+    border-radius: 28% 72% 46% 54% / 40% 48% 52% 60%;
+    height: 371px;
+    width: 371px;
+    top:50%;
+    left: 50%;
+}
+.des5{
+        border-radius: 82% 18% 59% 41% / 57% 48% 52% 43%;
+        background-color: white;
+        display: inline-block;
+        position: fixed;
+        z-index: -1;
+        background: rgb(240,236,238);
+        background: linear-gradient(90deg, rgb(216, 58, 137) 0%, rgba(180,59,88,0.8795167725293243) 100%);
+        border-radius: 28% 72% 46% 54% / 40% 48% 52% 60%;
+        height: 371px;
+        width: 371px;
+        bottom: 40%;
+        left: 0;
+}
+.des6{
+    display: inline-block;
+    position: fixed;
+    z-index: -1;
+    background: rgb(240,236,238);
+    background: linear-gradient(90deg, rgb(108, 224, 134) 0%, rgba(107,192,151,0.8795167725293243) 100%);
+    border-radius: 28% 72% 46% 54% / 40% 48% 52% 60%;
+    height: 300px;
+    width: 300px;
+    bottom: 60%;
+    right: 0%;
+}
+    .int{color:white;
+    font-size:2em;}
+
+</style>
+<body >
+     <Header class="head" id="head">
+        <div class="tab-container">
+            <div class="tab"><a href="scan1.html">Scan</a></div>
+            <div class="tab"><a href="feed back1.html">Feed back</a></div>
+            <div class="tab"><a href="about1.html">About Us</a></div>
+            <div class="tab"><a href="home1.html">Log Out</a></div>
+        </div>
+
+    </Header>
+    <main>
+      <div class="des1"></div>
+      <div class="des2"></div>
+      <div class="des3"></div>
+        <h1>Brain Tumer Detection And Segmentation Using Machine Learning. </h1>
+
+        <div class="box">
+            <em><p>Scan your health by uploading the images</p></em><br>
+           <div class="con">
+            <form action="/" method="post" enctype="multipart/form-data">
+               <input type="file" class="int" name="imagefile">
+               <input type="submit" class="subbtn" value="Upload">
+            </form>
+           </div>
+        </div>
+    </main>
+    <div class="content">
+        <h1>Prediction Result</h1>
+        <div class="prediction">
+            <p>Predicted Class: {{ prediction }}</p>
+        </div>
+    </div>
+    <footer class="max-w-screen-xl-mx-auto-px-4-py-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+              <div>
+                <h3 class="font-semibold text-md mb-3">Services</h3>
+                <ul>
+                  <li><a href="https://chat.openai.com/">Image Analysis</a></li>
+                  <li><a href="https://chat.openai.com/">Data Collection</a></li>
+                  <li><a href="https://chat.openai.com/">Model Training</a></li>
+                  <li><a href="https://chat.openai.com/">Real-time Diagnostics</a></li>
+                  <li><a href="https://chat.openai.com/">Research</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-semibold text-md mb-3">Resources</h3>
+                <ul>
+                  <li><a href="https://chat.openai.com/">Documentation</a></li>
+                  <li><a href="https://chat.openai.com/">Case Studies</a></li>
+                  <li><a href="https://chat.openai.com/">Publications</a></li>
+                  <li><a href="https://chat.openai.com/">Community Support</a></li>
+                  <li><a href="https://chat.openai.com/">FAQs</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-semibold text-md mb-3">Company</h3>
+                <ul>
+                  <li><a href="https://chat.openai.com/">About Us</a></li>
+                  <li><a href="https://chat.openai.com/">Our Team</a></li>
+                  <li><a href="https://chat.openai.com/">Contact Us</a></li>
+                  <li><a href="https://chat.openai.com/">Careers</a></li>
+                  <li><a href="https://chat.openai.com/">Privacy Policy</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-semibold text-md mb-3">Support</h3>
+                <ul>
+                  <li><a href="https://chat.openai.com/">Help Center</a></li>
+                  <li><a href="https://chat.openai.com/">Email Support</a></li>
+                  <li><a href="https://chat.openai.com/">Live Chat</a></li>
+                  <li><a href="https://chat.openai.com/">System Status</a></li>
+                  <li><a href="https://chat.openai.com/">Report an Issue</a></li>
+                </ul>
+              </div>
+            </div>
+            <div style="text-align: center;">&copy <script>document.write(new Date().getFullYear())</script> By Sri Eshwar College Of Engineering.</div>
+    </footer>
+</body>
+</html>
